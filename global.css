@@ -1,0 +1,45 @@
+
+@font-face {
+    font-family: "canela";
+    src: url(assets/fonts/CanelaDeck-Regular-Web.woff2) format(woff);
+}
+@font-face {
+    font-family: "worksans";
+    src: url(assets/fonts/WorkSans.woff2) format(woff);
+}   
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background-color: rgb(1, 13, 26);
+    color:  var(--light);
+}
+
+a {
+    text-decoration: none;
+    color: var(--light);
+}
+
+:root {
+    --cl1: rgb(10, 10, 10);
+    --cl2: rgb(2, 30, 59);
+    --cl2opa50: rgba(0, 0, 0, 0.918);
+    --cl3: rgb(238, 158, 9);
+    --border: rgb(4, 42, 83);
+
+    --gray: rgb(196, 189, 178);
+    --light: rgb(226, 218, 207);
+
+    --font1: "canela";
+    --font2: "worksans";
+
+    --p-body: 6rem;
+    @media (max-width:1024px) {
+        --p-body: 2rem;
+    }
+}
