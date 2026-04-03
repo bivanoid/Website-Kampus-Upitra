@@ -87,10 +87,63 @@ header {
     .menus .menu .active {
         background-color: var(--cl3);
     }
+
+    .trigger-menu {
+        display: none;
+    }
+
+    @media (max-width:1024px) {
+        width: 100%;
+        top: 0;
+        border-radius: 0;
+        height: 70px;
+        padding-inline: 2rem;
+        border: none;
+        border-bottom: 1px solid var(--gray);
+        justify-content: space-between;
+
+        .trigger-menu {
+            display: grid;
+        }
+
+        .logo {
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .logo svg path {
+            fill: var(--cl2);
+        }
+
+        .menus {
+            position: fixed;
+            top: 70px;
+            flex-direction: column;
+            align-items: flex-start;
+            /* background-color: oklch(from var(--light) l c h / 0.75);
+            backdrop-filter: blur(10px); */
+            background-color: var(--cl2);
+            height: calc(100vh - 70px);
+            width: 100%;
+            padding: 2rem;
+            left: 0;
+            display: none;
+            gap: 2rem;
+        }
+
+        .menus.buka {
+            display: flex;
+        }
+
+        .menus .menu a {
+            color: var(--light);
+            font-size: 1.5rem;
+        }
+    }
 }
 
 .section1 {
-    background: url(assets/page-banner-3.png);
+    background: url(assets/page-banner-3.webp);
     width: 100%;
     height: 100vh;
     background-position: center;
@@ -203,11 +256,14 @@ header {
     }
 
     .tentang-kami .baca-selengkapnya button {
-        width: 25px;
-        height: 25px;
+        width: 30px;
+        height: 30px;
         border-radius: 50%;
         border: none;
+        display: grid;
+        place-items: center;
         background-color: var(--cl2);
+        color: var(--light);
     }
 
     .image-sc2 {
@@ -220,11 +276,11 @@ header {
         position: relative;
         transform: translateY(20%) translateX(20%);
         background-color: oklch(from var(--cl2) l c h);
-        border: 2px solid var(--gray);
     }
 
     .image-sc2 .gambar-gedung img {
-        width: calc(100% - 2rem);
+        width: calc(100%);
+        
         height: fit-content;
         transform: translateY(-20%) translateX(-20%);
     }
@@ -235,6 +291,10 @@ header {
         flex-direction: column-reverse;
         :is(.tentang-kami, .image-sc2) {
             width: 100%;
+        }
+
+        .image-sc2 {
+            padding: 2rem;
         }
         .tentang-kami {
             padding: 2rem;
@@ -303,7 +363,7 @@ header {
         font-family: var(--font1) !important;
     }
 
-    .fakultas li i {
+    .fakultas li .icon {
         color: var(--light);
         align-self: center;
         font-size: clamp(3rem, 10vw, 5rem);
@@ -315,12 +375,16 @@ header {
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        font-size: 1rem;
     }
 
     .fakultas li a span {
         width: 20px;
         aspect-ratio: 1/1;
         display: inline-block;
+        display: grid;
+        
+        place-items: center;
         background-color: oklab(from var(--cl2) 0.4 a b);
         border-radius: 50%;
         transition: 0.25s;
@@ -330,12 +394,13 @@ header {
         transform: translateY(-5%);
     }
 
-    .fakultas li:hover i {
+    .fakultas li:hover .icon {
         transform: translateY(-15%);
     }
 
     .fakultas li:hover a span {
         background-color: var(--cl3);
+        color: var(--cl2);
     }
 
     @media (max-width:1024px) {
@@ -408,22 +473,22 @@ header {
     }
 
     .item-project:nth-child(1) .img-item-project {
-        background: url(assets/prexa.png);
+        background: url(assets/prexa.webp);
         background-size: contain;
         background-position: center;
     }
     .item-project:nth-child(2) .img-item-project {
-        background: url(assets/vr.png);
+        background: url(assets/vr.webp);
         background-size: contain;
         background-position: center;
     }
     .item-project:nth-child(3) .img-item-project {
-        background: url(assets/visensi.png);
+        background: url(assets/visensi.webp);
         background-size: contain;
         background-position: center;
     }
     .item-project:nth-child(4) .img-item-project {
-        background: url(assets/compas.png);
+        background: url(assets/compas.webp);
         background-size: contain;
         background-position: center;
     }
@@ -533,8 +598,6 @@ header {
         position: sticky;
         top: 0rem;
          background: var(--cl3);
-        /* border-radius: 1rem; */
-        /* background: url(assets/gedung2.png); */
         background-position: left;
         background-size: cover;
         padding: var(--p-body);

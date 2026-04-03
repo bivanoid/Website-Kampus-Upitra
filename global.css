@@ -15,6 +15,12 @@
     scroll-behavior: smooth;
 }
 
+.fi {
+    height: fit-content;
+        display: grid;
+        place-items: center;
+}
+
 ::selection {
     background-color: rgb(1, 13, 26);
     color:  var(--light);
