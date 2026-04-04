@@ -1,14 +1,5 @@
 @import url(./global.css);
 
-:is(h1, h2, h3, h4, h5, h6) {
-    font-family: var(--font1)
-}
-
-body {
-    background: var(--light);
-    font-family: var(--font2)
-}
-
 header {
     display: flex;
     align-items: center;
@@ -68,7 +59,6 @@ header {
     }
 
     .menus .menu a {
-        text-decoration: none;
         display: flex;
         align-items: center;
         gap: 0.25rem;
@@ -170,16 +160,6 @@ header {
         font-weight: normal;
     }
 
-    .hero h1 span {
-        text-decoration: underline;
-        text-decoration-color: var(--cl3);
-    }
-
-    .hero .con-hero-text p {
-        color: oklab(from var(--cl1) 0.25 a b);
-        max-width: 400px;
-        text-align: center;
-    }
 
     .hero .con-hero-text {
         display: flex;
@@ -189,21 +169,27 @@ header {
         justify-content: space-between;
     }
 
-    .hero .con-hero-text a {
+    .hero p {
+        max-width: 400px;
+        text-align: center;
+    }
+
+    .hero a {
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        text-decoration: none;
         color: var(--cl1) !important;
+        margin-top: 1rem;
+        font-size: 1.25rem;
     }
 
-    .hero .con-hero-text a span {
+    .hero a span {
         background: var(--cl2);
-        width: 25px;
-        height: 25px;
+        width: 40px;
+        aspect-ratio: 1/1;
         border-radius: 50%;
         color: var(--light);
-        font-size: 1.25rem;
+        font-size: 1.5rem;
         display: grid;
         place-items: center;
     }
@@ -235,11 +221,6 @@ header {
         padding-bottom: 1rem;
     }
 
-    .tentang-kami h2 span {
-        text-decoration: underline;
-        text-decoration-color: var(--cl3);
-    }
-
     .tentang-kami p {
         color: oklab(from var(--cl1) l a b / 0.75);
     }
@@ -250,20 +231,31 @@ header {
         width: fit-content;
         gap: 0.5rem;
         padding-top: 1rem;
-        text-decoration: underline;
-        text-decoration-color: var(--cl2);
         color: var(--cl2);
+        transition: 0.5s;
+    }
+
+    .baca-selengkapnya * {
+        transition: 0.5s;
     }
 
     .tentang-kami .baca-selengkapnya button {
         width: 30px;
         height: 30px;
         border-radius: 50%;
+        font-size: 1.25rem;
         border: none;
         display: grid;
         place-items: center;
         background-color: var(--cl2);
         color: var(--light);
+    }
+
+    .baca-selengkapnya:hover {
+        gap: 1rem;
+    }
+    .baca-selengkapnya:hover .fi {
+        transform: translateX(10%);
     }
 
     .image-sc2 {
@@ -325,11 +317,6 @@ header {
         padding-bottom: 2rem;
     }
 
-    .fakultas h2 span {
-        text-decoration: underline;
-        text-decoration-color: var(--cl3);
-    }
-
     .fakultas ul {
         list-style: none;
         display: flex;
@@ -379,11 +366,11 @@ header {
     }
 
     .fakultas li a span {
-        width: 20px;
+        width: 30px;
         aspect-ratio: 1/1;
         display: inline-block;
         display: grid;
-        
+        font-size: 1.25rem;
         place-items: center;
         background-color: oklab(from var(--cl2) 0.4 a b);
         border-radius: 50%;
@@ -396,6 +383,7 @@ header {
 
     .fakultas li:hover .icon {
         transform: translateY(-15%);
+        color: var(--cl3);
     }
 
     .fakultas li:hover a span {
@@ -424,11 +412,6 @@ header {
 
     .project .achievement h2 {
         font-size: clamp(1.5rem, 10vw, 3rem);
-    }
-
-    .project .achievement h2 span {
-        text-decoration: underline;
-        text-decoration-color: var(--cl3);
     }
 
     .project .achievement h3 {
@@ -499,6 +482,9 @@ header {
         background-color: var(--cl2);
         align-self: center;
         border-radius: 50%;
+        display: grid;
+        place-items: center;
+        font-size: 1.5rem;
     }
 
     .item-project .content-project {
@@ -529,11 +515,6 @@ header {
         font-size: 2rem;
     }
 
-    .pendaftaran h3 span {
-        text-decoration: underline;
-        text-decoration-color: var(--cl3);
-    }
-
     .pendaftaran a {
         display: flex;
         align-items: center;
@@ -545,6 +526,10 @@ header {
         flex-shrink: 0;
         background-color: var(--cl3);
         border-radius: 50%;
+        display: grid;
+        place-items: center;
+        color: var(--cl2);
+        font-size: 1rem;
     }
 
     .pendaftaran .beasiswa {
@@ -721,7 +706,7 @@ header {
         grid-template-columns: 1fr 1fr;
         min-height: 100vh;
         width: 100%;
-        gap: 1rem;
+        gap: 2rem;
         margin-top: 2rem;
     }
 
@@ -739,11 +724,14 @@ header {
         gap: 1rem;
     }
 
-    .date {
-        margin-block: 1rem;
+    .date .fi {
+        color: var(--cl3);
     }
 
     .date span {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
         padding: 0.5rem;
         background: var(--cl2);
         color: var(--light);
@@ -754,6 +742,7 @@ header {
     .content-berita-vertikal {
         display: flex;
         flex-direction: column;
+        gap: 0.5rem;
     }
 
     .item-berita h4 {
@@ -803,3 +792,183 @@ header {
         }
     }
 }
+
+footer.footer {
+    background-color: var(--cl2);
+    color: var(--light);
+    padding: 5rem var(--p-body) 2rem;
+    font-family: var(--font2);
+
+    .footer-top {
+        display: flex;
+        gap: 4rem;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        @media (max-width: 1024px) {
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+    }
+
+    .footer-brand {
+        flex: 0 0 280px;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+
+        @media (max-width: 1024px) {
+            flex: unset;
+            width: 100%;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+
+            span {
+                font-family: var(--font1);
+                font-size: 2rem;
+                color: var(--light);
+                letter-spacing: 0.1em;
+            }
+        }
+
+        .footer-tagline {
+            font-size: 1rem;
+            color: var(--gray);
+            line-height: 1.6;
+            max-width: 260px;
+        }
+
+        .footer-contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+
+            .footer-contact-item {
+                display: flex;
+                align-items: flex-start;
+                gap: 0.6rem;
+                font-size: 1rem;
+                color: var(--gray);
+                line-height: 1.5;
+
+                .fi {
+                    color: var(--cl3);
+                    margin-top: 2px;
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 0.6rem;
+            margin-top: 0.4rem;
+
+            .social-btn {
+                width: 36px;
+                height: 36px;
+                border: 1px solid var(--border);
+                border-radius: 50%;
+                display: grid;
+                place-items: center;
+                color: var(--gray);
+                font-size: 1rem;
+                transition: background 0.2s, color 0.2s, border-color 0.2s;
+
+                &:hover {
+                    background: var(--cl3);
+                    color: var(--cl1);
+                    border-color: var(--cl3);
+                }
+            }
+        }
+    }
+
+    .footer-links {
+        flex: 1;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+
+        @media (max-width: 1024px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 480px) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .footer-col {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            h4 {
+                font-family: var(--font1);
+                font-size: 1.5rem;
+                color: var(--light);
+                font-weight: 400;
+                position: relative;
+                padding-bottom: 0.6rem;
+                text-decoration: underline;
+                text-decoration-color: var(--cl3);
+            }
+
+            ul {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+
+                li a {
+                    font-size: 1rem;
+                    color: var(--gray);
+                    transition: color 0.2s, padding-left 0.2s;
+                    display: inline-block;
+
+                    &:hover {
+                        color: var(--cl3);
+                        padding-left: 6px;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-divider {
+        width: 100%;
+        height: 1px;
+        background: var(--border);
+        margin: 3rem 0 1.5rem;
+    }
+
+    .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1rem;
+        color: var(--gray);
+        gap: 1rem;
+        flex-wrap: wrap;
+
+        strong {
+            color: var(--cl3);
+            font-weight: 500;
+        }
+    }
+}
+
+/* footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--cl2);
+    padding: var(--p-body);
+    color: var(--light);
+} */

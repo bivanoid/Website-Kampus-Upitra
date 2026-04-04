@@ -49,3 +49,18 @@ a {
         --p-body: 2rem;
     }
 }
+
+:is(h1, h2, h3, h4, h5, h6) {
+    font-family: var(--font1)
+}
+
+body {
+    background: var(--light);
+    font-family: var(--font2)
+}
+
+
+.underline {
+    text-decoration: underline;
+    text-decoration-color: var(--cl3);
+}
