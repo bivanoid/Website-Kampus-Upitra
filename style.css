@@ -530,6 +530,18 @@ header {
         place-items: center;
         color: var(--cl2);
         font-size: 1rem;
+        transition: 0.5s;
+    }
+
+    .pendaftaran * {
+        transition: 0.5s;
+    }
+
+    .pendaftaran a:hover {
+        gap: 1rem;
+    }
+    .pendaftaran a:hover span {
+        scale: 1.3;
     }
 
     .pendaftaran .beasiswa {
