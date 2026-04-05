@@ -1,66 +1,110 @@
-
 @font-face {
     font-family: "canela";
-    src: url(assets/fonts/CanelaDeck-Regular-Web.woff2) format(woff);
+    src: url(assets/fonts/CanelaDeck-Regular-Web.woff2) format(woff2);
 }
 @font-face {
     font-family: "worksans";
-    src: url(assets/fonts/WorkSans.woff2) format(woff);
-}   
+    src: url(assets/fonts/WorkSans.woff2) format(woff2);
+}
 
-* {
+*, *::before, *::after {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+html {
     scroll-behavior: smooth;
 }
 
 .fi {
     height: fit-content;
-        display: grid;
-        place-items: center;
+    display: grid;
+    place-items: center;
 }
 
 ::selection {
-    background-color: rgb(1, 13, 26);
-    color:  var(--light);
+    background-color: var(--cl2);
+    color: var(--cl3);
 }
 
 a {
     text-decoration: none;
-    color: var(--light);
+    color: inherit;
 }
 
 :root {
-    --cl1: rgb(10, 10, 10);
-    --cl2: rgb(2, 30, 59);
-    --cl2opa50: rgba(0, 0, 0, 0.918);
-    --cl3: rgb(238, 158, 9);
-    --border: rgb(4, 42, 83);
+    --cl1: rgb(8, 8, 12);
+    --cl2: rgb(3, 22, 46);
+    --cl2-mid: rgb(5, 35, 72);
+    --cl2-light: rgba(3, 22, 46, 0.06);
+    --cl3: rgb(224, 149, 8);
+    --cl3-light: rgba(224, 149, 8, 0.12);
+    --border: rgba(3, 22, 46, 0.12);
+    --border-light: rgba(255,255,255,0.08);
 
-    --gray: rgb(196, 189, 178);
-    --light: rgb(226, 218, 207);
+    --gray: rgb(140, 133, 122);
+    --light: rgb(223, 220, 214);
+    --cream: rgb(240, 234, 222);
+    --white: rgb(255, 255, 255);
 
     --font1: "canela";
     --font2: "worksans";
 
-    --p-body: 6rem;
-    @media (max-width:1024px) {
-        --p-body: 2rem;
+    --p-body: 7rem;
+    --radius: 1.25rem;
+    --radius-sm: 0.75rem;
+
+    --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-fast: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    @media (max-width: 1024px) {
+        --p-body: 1.75rem;
     }
 }
 
 :is(h1, h2, h3, h4, h5, h6) {
-    font-family: var(--font1)
+    font-family: var(--font1);
+    font-weight: 400;
 }
 
 body {
-    background: var(--light);
-    font-family: var(--font2)
+    background-color: var(--light);
+    font-family: var(--font2);
+    color: var(--cl1);
+    overflow-x: hidden;
 }
-
 
 .underline {
     text-decoration: underline;
     text-decoration-color: var(--cl3);
+    text-underline-offset: 4px;
 }
+
+/* Reveal animations */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@keyframes slideRight {
+    from { opacity: 0; transform: translateX(-20px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s var(--transition), transform 0.7s var(--transition);
+}
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
