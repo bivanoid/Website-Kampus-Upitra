@@ -301,13 +301,7 @@
     </footer>
 
     <script>
-        // ── Header scroll effect ──
-        const header = document.getElementById('mainHeader');
-        window.addEventListener('scroll', () => {
-            header.classList.toggle('scrolled', window.scrollY > 20);
-        });
 
-        // ── Mobile menu toggle ──
         const triggerMenu = document.getElementById('triggerMenu');
         const menus = document.getElementById('menus');
 
@@ -317,7 +311,6 @@
             triggerMenu.setAttribute('aria-expanded', isOpen);
         });
 
-        // Close on outside click
         document.addEventListener('click', (e) => {
             if (!header.contains(e.target) && menus.classList.contains('buka')) {
                 menus.classList.remove('buka');

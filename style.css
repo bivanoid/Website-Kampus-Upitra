@@ -21,7 +21,7 @@ header {
 }
 
 header.scrolled {
-    box-shadow: 0 4px 40px rgba(3, 22, 46, 0.12);
+    transform: translateY(-100%);
 }
 
 .logo {
@@ -133,9 +133,10 @@ header.scrolled {
         border: none;
         padding: 0;
         gap: 1rem;
+        background: var(--cl2);
     }
 
-    .trigger-menu { display: flex; }
+    .trigger-menu { display: flex; color: var(--light); }
 
     .menus {
         position: fixed;
@@ -181,7 +182,7 @@ header.scrolled {
         border-radius: 0;
         height: 70px;
         width: fit-content;
-        padding: 1rem;
+        padding: 1.25rem;
         flex-shrink: 0;
     }
     .logo svg path { fill: var(--light); }
