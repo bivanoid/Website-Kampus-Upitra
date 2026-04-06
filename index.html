@@ -27,7 +27,17 @@
             </li>
             <li class="menu">
                 <a href="rpl.html">
-                    <span></span>Program Studi
+                    <span></span>RPL
+                </a>
+            </li>
+            <li class="menu">
+                <a href="inf.html">
+                    <span></span>Informatika
+                </a>
+            </li>
+            <li class="menu">
+                <a href="si.html">
+                    <span></span>SI
                 </a>
             </li>
             <li class="menu kontak-kami">
@@ -308,15 +318,8 @@
         triggerMenu.addEventListener('click', () => {
             const isOpen = menus.classList.toggle('buka');
             document.body.style.overflow = isOpen ? 'hidden' : '';
-            triggerMenu.setAttribute('aria-expanded', isOpen);
         });
 
-        document.addEventListener('click', (e) => {
-            if (!header.contains(e.target) && menus.classList.contains('buka')) {
-                menus.classList.remove('buka');
-                document.body.style.overflow = '';
-            }
-        });
 
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
