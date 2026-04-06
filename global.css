@@ -1,6 +1,6 @@
 @font-face {
     font-family: "canela";
-    src: url(assets/fonts/CanelaDeck-Regular-Web.woff2) format(woff2);
+    src: url(assets/fonts/degular-semibold.woff2) format(woff2);
 }
 @font-face {
     font-family: "worksans";
@@ -43,7 +43,7 @@ a {
     --border: rgba(3, 22, 46, 0.12);
     --border-light: rgba(255,255,255,0.08);
 
-    --gray: rgb(140, 133, 122);
+    --gray: #7C838C;
     --light: rgb(223, 220, 214);
     --cream: rgb(240, 234, 222);
     --white: rgb(255, 255, 255);
@@ -80,8 +80,13 @@ body {
     text-decoration-color: var(--cl3);
     text-underline-offset: 4px;
 }
+.fade-light {
+    color: var(--gray);
+}
+.fade-dark {
+    opacity: 50%;
+}
 
-/* Reveal animations */
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(30px); }
     to   { opacity: 1; transform: translateY(0); }

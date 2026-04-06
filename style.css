@@ -25,14 +25,16 @@ header.scrolled {
 }
 
 .logo {
-    width: 38px;
-    height: 38px;
+    width: fit-content;
+    height: 42px;
     display: flex;
     align-items: center;
+    gap: 0.5rem;
+    color: var(--light);
     flex-shrink: 0;
-    padding: 0.5rem;
+    padding: 0.75rem;
     background-color: var(--cl2);
-    border-radius: 50%;
+    border-radius: 5rem;
 }
 .logo svg {
     width: 100%;
@@ -178,7 +180,7 @@ header.scrolled {
     .logo {
         border-radius: 0;
         height: 70px;
-        width: 70px;
+        width: fit-content;
         padding: 1rem;
         flex-shrink: 0;
     }
@@ -638,7 +640,9 @@ header.scrolled {
     .section4 {
         grid-template-columns: 1fr;
     }
-    .daftar { grid-template-rows: auto auto; }
+    .daftar { grid-template-rows: auto auto; 
+     height: 100vh;
+    }
     .daftar-card { padding: var(--p-body); }
 }
 
@@ -732,9 +736,9 @@ header.scrolled {
 }
 
 .nilai-item:nth-child(1) { top: 0;     background: oklch(0.30 0.06 250); }
-.nilai-item:nth-child(2) { top: 5rem;  background: oklch(0.27 0.06 250); height: calc(100vh - 5rem); }
-.nilai-item:nth-child(3) { top: 10rem; background: oklch(0.24 0.06 250); height: calc(100vh - 10rem); }
-.nilai-item:nth-child(4) { top: 15rem; background: oklch(0.21 0.06 250); }
+.nilai-item:nth-child(2) { top: 0rem;  background: oklch(0.27 0.06 250);  }
+.nilai-item:nth-child(3) { top: 0rem; background: oklch(0.24 0.06 250); }
+.nilai-item:nth-child(4) { top: 0rem; background: oklch(0.21 0.06 250); }
 
 .nilai-item-icon {
     font-size: 3.5rem;
@@ -788,9 +792,6 @@ header.scrolled {
     .nilai-item-content p { max-width: none; }
 }
 
-/* ─────────────────────────────────────────
-   FOOTER
-───────────────────────────────────────── */
 footer.footer {
     background-color: var(--cl2);
     color: var(--light);

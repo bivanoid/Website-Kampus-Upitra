@@ -124,7 +124,7 @@
     background: rgba(255,255,255,0.05);
 }
 
-/* Stat bar */
+ Stat bar */
 .rpl-hero-stat-bar {
     position: relative;
     z-index: 2;
@@ -173,9 +173,7 @@
     .hero-stat { padding: 1.25rem 1.5rem; min-width: 120px; }
 }
 
-/* ─────────────────────────────────────────
-   LAYOUT: SIDEBAR + MAIN
-───────────────────────────────────────── */
+
 .rpl-layout {
     display: grid;
     grid-template-columns: 300px 1fr;
@@ -198,7 +196,7 @@
     gap: 2rem;
 }
 
-/* Kaprodi Card */
+
 .kaprodi-card {
     background: var(--cl2);
     border-radius: var(--radius);
@@ -271,7 +269,6 @@
 .kaprodi-contact a:hover { color: var(--cl3); }
 .kaprodi-contact a .fi { color: var(--cl3); font-size: 0.75rem; }
 
-/* Prodi list */
 .sidebar-prodi h4,
 .sidebar-nav h4 {
     font-family: var(--font2);
@@ -605,7 +602,6 @@
     white-space: nowrap;
 }
 
-/* ── Nilai-nilai ── */
 .nilai-section {
     padding-inline: var(--p-body);
  }
@@ -651,7 +647,6 @@
     line-height: 1.7;
 }
 
-/* ── CTA Section ── */
 .cta-section {
     background: var(--cl2);
     overflow: hidden;
